@@ -18,7 +18,8 @@ export const appSlice = createSlice({
     name: 'app',
     reducers: {
         setAppStatusAC(state, action) {
-            state.status = action.payload.status
+            console.log(action)
+            state.status = action.payload
         },
         setAppErrorAC(state, action) {
             state.error = action.payload.error
@@ -26,7 +27,7 @@ export const appSlice = createSlice({
     }
 })
 export const appReducer = appSlice.reducer
-export const {setAppStatusAC,setAppErrorAC} = appSlice.actions
+export const {setAppStatusAC, setAppErrorAC} = appSlice.actions
 
 export type SetAppErrorActionType = ReturnType<typeof setAppErrorAC>
 export type SetAppStatusActionType = ReturnType<typeof setAppStatusAC>
